@@ -1,0 +1,334 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* =========================
+   Global Variables
+========================= */
+
+:root {
+    --primary: #0875d1;
+    --primary-dark: #0759a5;
+    --text: #152b48;
+    --muted: #71829a;
+    --border: #e1e9f2;
+}
+
+/* =========================
+   General Styles
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #f3f8fc;
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* =========================
+   Login Layout
+========================= */
+
+.login-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =========================
+   Left Hospital Section
+========================= */
+
+.hospital-section {
+    width: 52%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 65px;
+    color: white;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(5, 33, 68, 0.10) 0%,
+            rgba(3, 30, 65, 0.85) 100%
+        ),
+        url("../assets/images/hospital.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #164b7d;
+}
+
+.hospital-content {
+    position: relative;
+    z-index: 1;
+    max-width: 520px;
+}
+
+.hospital-logo {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hospital-content h1 {
+    font-size: clamp(32px, 3.2vw, 52px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.hospital-content p {
+    font-size: 17px;
+    color: #dceeff;
+}
+
+/* =========================
+   Right Login Section
+========================= */
+
+.login-section {
+    width: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 48px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 45px 38px;
+    background: white;
+    border: 1px solid #edf1f6;
+    border-radius: 22px;
+    box-shadow: 0 15px 50px rgba(25, 64, 112, 0.07);
+}
+
+/* =========================
+   Login Header
+========================= */
+
+.login-header {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.logo-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e6f3ff;
+    border-radius: 18px;
+    color: var(--primary);
+    font-size: 35px;
+}
+
+.login-header h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.login-header p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* =========================
+   Form Fields
+========================= */
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.form-group input {
+    width: 100%;
+    height: 49px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0 15px;
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(8, 117, 209, 0.1);
+}
+
+/* =========================
+   Password Field
+========================= */
+
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    padding-right: 75px;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* =========================
+   Remember Me
+========================= */
+
+.form-options {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #52647b;
+    cursor: pointer;
+}
+
+.remember-me input {
+    accent-color: var(--primary);
+}
+
+/* =========================
+   Error Message
+========================= */
+
+#errorMessage {
+    color: #dc3545;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+#errorMessage:empty {
+    display: none;
+}
+
+/* =========================
+   Login Button
+========================= */
+
+.login-btn {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.login-btn:focus-visible,
+#togglePassword:focus-visible {
+    outline: 3px solid #82c4ff;
+    outline-offset: 3px;
+}
+
+/* =========================
+   Login Footer
+========================= */
+
+.login-footer {
+    text-align: center;
+    margin-top: 35px;
+    color: #97a4b5;
+    font-size: 11px;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+
+@media (max-width: 850px) {
+
+    .login-container {
+        flex-direction: column;
+    }
+
+    .hospital-section {
+        width: 100%;
+        min-height: 260px;
+        padding: 35px;
+    }
+
+    .hospital-content h1 {
+        font-size: 30px;
+    }
+
+    .login-section {
+        width: 100%;
+        padding: 30px 18px;
+    }
+
+    .login-card {
+        padding: 35px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hospital-section {
+        min-height: 220px;
+        padding: 25px;
+    }
+
+    .hospital-content h1 {
+        font-size: 25px;
+    }
+
+    .hospital-content p {
+        font-size: 14px;
+    }
+
+    .login-section {
+        padding: 20px 12px;
+    }
+
+    .login-card {
+        padding: 30px 20px;
+    }
+
+    .login-header h2 {
+        font-size: 24px;
+    }
+}
